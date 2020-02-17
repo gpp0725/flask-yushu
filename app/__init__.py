@@ -4,7 +4,11 @@
 # @Author   : Gpp
 # @File     : __init__.py.py
 from flask import Flask
+from flask_login import login_user, logout_user, login_required, LoginManager, current_user
+
 from app.models.book import db
+
+login_manager = LoginManager()
 
 
 def create_app():
@@ -13,6 +17,7 @@ def create_app():
     app.config.from_object('app.secure')
     register_blueprint(app)
     db.init_app(app)
+    login_manager.init_app(app)
     db.create_all(app=app)
     return app
 

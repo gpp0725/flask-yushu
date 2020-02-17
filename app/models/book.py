@@ -6,10 +6,9 @@
 
 # sqlalchemy 第三方的python的包
 # flask在这个包的基础上封装了Flask_SQLAlchemy，使flask更加人性化
-from sqlalchemy import Column, Integer, String
-from flask_sqlalchemy import SQLAlchemy
+from app.models.base import db
 
-db = SQLAlchemy()
+from sqlalchemy import Column, Integer, String
 
 
 class Book(db.Model):

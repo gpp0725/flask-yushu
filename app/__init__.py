@@ -5,8 +5,8 @@
 # @File     : __init__.py.py
 from flask import Flask
 from flask_login import login_user, logout_user, login_required, LoginManager, current_user
-
-from app.models.book import db
+from app.models.base import db
+from app.models.user import User
 
 login_manager = LoginManager()
 
@@ -20,6 +20,11 @@ def create_app():
     login_manager.init_app(app)
     db.create_all(app=app)
     return app
+
+
+@login_manager.user_loader
+def get_user(uid):
+    return User.query.get(int(uid))
 
 
 def register_blueprint(app):

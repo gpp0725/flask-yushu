@@ -8,5 +8,3 @@ DEBUG = True
 # 这个参数是固定的,'mysql'表示数据库类型，‘cymysql’表示mysqle的驱动，需要pipenv 手动安装
 SQLALCHEMY_DATABASE_URI = 'mysql+cymysql://root:asd1234@111.33.152.130:10659/fisher'
 SECRET_KEY = '\x88D\x91'
-SECRET_KEY = '\x88D\x91'
-SECRET_KEY = '\x88D\x91'
